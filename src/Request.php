@@ -40,6 +40,10 @@ trait Request {
         $response = curl_exec($curl);
         curl_close($curl);
 
+        if(self::$token) {
+            self::$token = null;
+        }
+
         return json_decode($response, true);
     }
 
@@ -60,6 +64,10 @@ trait Request {
         
         $response = curl_exec($curl);
         curl_close($curl);
+
+        if(self::$token) {
+            self::$token = null;
+        }
         
         return json_decode($response, true);
     }
