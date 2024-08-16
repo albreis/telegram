@@ -12,13 +12,6 @@
 class Bot implements BotInterface {
 
     use Request;
-    
-    private static $token;
-
-    public static function init(string $token) 
-    {
-        self::$token = $token;
-    }
 
     public static function sendChatAction(...$params) 
     {
