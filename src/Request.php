@@ -4,6 +4,20 @@ namespace Albreis\Telegram;
 
 trait Request {
     private static $apiUrl = "https://api.telegram.org/bot";
+    
+    private static $token;
+
+    public static function setToken($token) {
+        self::$token = $token;
+        return new self;
+    }
+
+    public static function getToken() {
+        if(self::$token) {
+            return self::$token;
+        }
+        return Config::getToken();
+    }
 
     /**
      * Envia uma requisição POST à API do Telegram.
@@ -14,7 +28,7 @@ trait Request {
      */
     public static function sendPostRequest(string $method, array $data = []): mixed {
         
-        $url = self::$apiUrl . Config::getToken() . '/' . $method;
+        $url = self::$apiUrl . self::getToken() . '/' . $method;
         $curl = curl_init($url);
         
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -37,7 +51,7 @@ trait Request {
      * @return mixed Resposta da API.
      */
     public static function sendGetRequest(string $method, array $data = []): mixed {
-        $url = self::$apiUrl . Config::getToken() . '/' . $method;
+        $url = self::$apiUrl . self::getToken() . '/' . $method;
         $url .= '?' . http_build_query($data);
 
         $curl = curl_init($url);

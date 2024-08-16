@@ -21,4 +21,15 @@ $response = TelegramBot::sendMessage(
 
 var_dump($response);
 
+/**
+ * É possível definir o token durante a chamada
+ * Isso irá retornar uma nova instância
+ */
+$response = TelegramBot::setToken('seu token aqui')->sendMessage(
+    chat_id: $chat_id,
+    text: 'Test message'
+);
+
+var_dump($response);
+
 ```
