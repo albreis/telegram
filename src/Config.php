@@ -2,7 +2,7 @@
 
 namespace Albreis\Telegram;
 
-class TelegramConfig {
+class Config {
 
     private static $token;
 

@@ -14,7 +14,7 @@ trait Request {
      */
     public static function sendPostRequest(string $method, array $data = []): mixed {
         
-        $url = self::$apiUrl . TelegramConfig::getToken() . '/' . $method;
+        $url = self::$apiUrl . Config::getToken() . '/' . $method;
         $curl = curl_init($url);
         
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -37,7 +37,7 @@ trait Request {
      * @return mixed Resposta da API.
      */
     public static function sendGetRequest(string $method, array $data = []): mixed {
-        $url = self::$apiUrl . TelegramConfig::getToken() . '/' . $method;
+        $url = self::$apiUrl . Config::getToken() . '/' . $method;
         $url .= '?' . http_build_query($data);
 
         $curl = curl_init($url);

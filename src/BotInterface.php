@@ -1,22 +1,7 @@
 <?php namespace Albreis\Telegram;
 
 interface BotInterface {
-    /**
-     * Undocumented function
-     *
-     * @param  string $token
-     * @return mixed
-     */
-    public static function init(string $token);
-    /**
-     * Undocumented function
-     *
-     * @param  integer|string $chat_id
-     * @param  [type]         $action
-     * @param  integer|null   $business_connection_id
-     * @param  integer|null   $message_thread_id
-     * @return mixed
-     */
+    
     public static function sendChatAction(...$params);
     /**
      * Undocumented function
