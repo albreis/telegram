@@ -1,5 +1,8 @@
 <?php namespace Albreis\Telegram;
 
+
+use Albreis\Telegram\Request;
+
 /**
  * Undocumented class
  *
@@ -12,6 +15,12 @@
 class Bot implements BotInterface {
 
     use Request;
+
+    public static $update;
+
+    public static function setUpdate($update) {
+        self::$update = $update;
+    }
 
     public static function sendChatAction(...$params) 
     {
