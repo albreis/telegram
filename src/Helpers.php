@@ -7,42 +7,47 @@ use Albreis\Router;
 class Helpers {
 
     public static function getUserDataById($chat_id, $user_id) {
-        return Bot::getChatMember(
+        $result = Bot::getChatMember(
             chat_id: $chat_id,
             user_id: $user_id
         );
+        return $result['result'] ?? null;
     }
 
 
     public static function sendGroupMessage($chat_id, $text) {
-        return Bot::sendMessage(
+        $result = Bot::sendMessage(
             chat_id: $chat_id,
             text: $text
         );
+        return $result['result'] ?? null;
     }
 
     public static function removeUserFromGroup($chat_id, $user_id)
     {
-        return Bot::kickChatMember(
+        $result = Bot::kickChatMember(
             chat_id: $chat_id,
             user_id: $user_id
         );
+        return $result['result'] ?? null;
     }
 
     public static function sendUserMessage($chat_id, $user_id, $text) {
-        return Bot::sendMessage(
+        $result = Bot::sendMessage(
             text: $text,
             chat_id: $chat_id,
             reply_to_message_id: $user_id
         );        
+        return $result['result'] ?? null;
     }
 
 
     public static function banUserPermanently($chat_id, $user_id) {
-        return Bot::kickChatMember(
+        $result = Bot::kickChatMember(
             chat_id: $chat_id,
             user_id: $user_id
         );
+        return $result['result'] ?? null;
     }
 
     public static function isGroupOwner($chat_id, $user_id)
@@ -60,9 +65,10 @@ class Helpers {
     }
 
     public static function getChatInfo($chat_id) {
-        return Bot::getChat(
+        $result = Bot::getChat(
             chat_id: $chat_id
         );
+        return $result['result'] ?? null;
     }
 
     public static function getUserName($member) {
@@ -86,13 +92,14 @@ class Helpers {
     }
 
     public static function createInviteLink($chat_id) {
+        
         $result = Bot::createChatInviteLink(
             chat_id: $chat_id,
             expire_date: time() + (3600 * 24),
             member_limit: 5
         );
 
-        return $result['ok'] ?? false;
+        return $result;
     }
 
     public static function revokeInviteLink($chat_id, $invite_link_id) {
