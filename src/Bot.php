@@ -148,6 +148,11 @@ class Bot implements BotInterface {
         return self::sendPostRequest(__FUNCTION__, $params);
     }
     
+    public static function kickChatMember(...$params) 
+    {
+        return self::sendPostRequest(__FUNCTION__, $params);
+    }
+    
     public static function getChatMemberCount(...$params) 
     {
         return self::sendPostRequest(__FUNCTION__, $params);
@@ -182,8 +187,6 @@ class Bot implements BotInterface {
     {
         return self::sendPostRequest(__FUNCTION__, $params);
     }
-
-
         
     public static function getForumTopicIconStickers(...$params) 
     {
@@ -389,9 +392,7 @@ class Bot implements BotInterface {
     {
         return self::sendPostRequest(__FUNCTION__, $params);
     }
-
-
-        
+ 
     public static function stopPoll(...$params) 
     {
         return self::sendPostRequest(__FUNCTION__, $params);
