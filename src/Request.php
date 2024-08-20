@@ -2,7 +2,10 @@
 
 namespace Albreis\Telegram;
 
+use Albreis\Telegram\Config;
+
 trait Request {
+    
     private static $apiUrl = "https://api.telegram.org/bot";
     
     private static $token;
