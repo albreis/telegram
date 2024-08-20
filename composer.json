@@ -20,6 +20,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^8",
-        "albreis/router": "dev-master"
+        "albreis/router": "^3.3"
     }
 }
