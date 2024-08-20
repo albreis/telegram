@@ -123,9 +123,7 @@ class Helpers {
         $router = new Router(uri: trim($text));
         return $router->all(
             $command, 
-            function() use ($callback, $params){ 
-                return call_user_func($callback, $params); 
-            }, 
+            $callback, 
             true
         );
     }
