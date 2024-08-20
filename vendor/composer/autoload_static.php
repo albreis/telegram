@@ -23,6 +23,7 @@ class ComposerStaticInit62df0dfb683ad804c4d0624891e57417
         'A' => 
         array (
             'Albreis\\Telegram\\' => 17,
+            'Albreis\\' => 8,
         ),
     );
 
@@ -38,6 +39,10 @@ class ComposerStaticInit62df0dfb683ad804c4d0624891e57417
         'Albreis\\Telegram\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Albreis\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/albreis/router/src',
         ),
     );
 

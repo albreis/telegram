@@ -9,4 +9,5 @@ return array(
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Albreis\\Telegram\\' => array($baseDir . '/src'),
+    'Albreis\\' => array($vendorDir . '/albreis/router/src'),
 );
