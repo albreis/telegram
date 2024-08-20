@@ -121,6 +121,12 @@ class Helpers {
         }
         $text = trim(Bot::$update['message']['text']);
         $router = new Router(uri: trim($text));
-        $router->all($command, $callback($params), true);
+        return $router->all(
+            $command, 
+            function() use ($callback, $params){ 
+                return call_user_func($callback, $params); 
+            }, 
+            true
+        );
     }
 }
