@@ -112,4 +112,11 @@ class Helpers {
 
         return $result['ok'] ?? false;
     }
+
+    public static function watch($command, $callback, $params = []) {
+        $text = trim(Bot::$update['message']['text']);
+        if($text == $command) {
+            return call_user_func($callback, $params);
+        }
+    }
 }
