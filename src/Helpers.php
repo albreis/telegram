@@ -58,7 +58,7 @@ class Helpers {
         );
 
         if ($data['ok']) {
-            return $data['result']['status'] === 'creator';
+            return $data['result']['status'] === 'creator' || $data['result']['status'] === 'administrator';
         } 
         
         return false;
