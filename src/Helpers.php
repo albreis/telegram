@@ -131,6 +131,7 @@ class Helpers {
         return $router->all(
             $command, 
             $callback, 
+            true,
             true
         );
     }
