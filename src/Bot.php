@@ -22,6 +22,16 @@ class Bot implements BotInterface {
         self::$update = $update;
     }
 
+    public function __call($name, $arguments)
+    {
+        return self::sendPostRequest($name, $arguments);
+    }
+
+    public static function __callStatic($name, $arguments)
+    {
+        return self::sendPostRequest($name, $arguments);
+    }
+
     public static function sendChatAction(...$params) 
     {
         return self::sendPostRequest(__FUNCTION__, $params);
